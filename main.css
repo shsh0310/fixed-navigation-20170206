@@ -1,0 +1,66 @@
+/*
+*
+* 通常のcssはSP向けを想定して設計する。
+* 横幅365px以下がSP
+* 横幅366px以上がPC
+*
+*/
+
+html, body {
+    height:100%;
+}
+
+.container {
+    display: block;
+    width: 100%;
+    min-height:100%;
+}
+
+.header {
+    display: block;
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    background-color: aqua;
+}
+
+.header__btn {
+    float: right;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding-top: 12px;
+    background-color: azure;
+    text-align: center;
+}
+
+.body {
+    position: relative;
+    display: block;
+    width: 100%;
+    min-height:100%;
+}
+
+.side-nav {
+    position: fixed;
+    top:50px;
+    right:-100%;
+    width:100%;
+    height: 100%;
+    background-color: beige;
+}
+
+.side-nav.side-nav-clicked {
+    right:0;
+}
+
+/* PC向け */
+@media screen and (min-width: 366px)  {
+    .side-nav {
+        right:0;
+        width:200px;
+    }
+    .side-nav.side-nav-clicked {
+        right:-100%;
+    }
+}
