@@ -6,14 +6,16 @@
     $(function(){
         var $headerBtn = $('.js-headerBtn');
         var $sidenav = $('.js-sideNav');
-        //pcの横幅を800pxとして既定
+        //pcの以上の横幅を366px以上として既定
         var pcWidth = 366;
         var pastWidth;
 
+        //グローバルナビ開閉のクリックイベント登録
         $headerBtn.on('click', function(){
             $sidenav.toggleClass('side-nav-clicked');
         });
 
+        //ウィンドウリサイズに伴う、グローバルナビのcssクラス管理
         $(window).on('resize', function(){
             var w = window.innerWidth;
             // リサイズがSP→PCの向き且つ、
